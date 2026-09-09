@@ -1,10 +1,17 @@
+EXEC bronze.load_bronze;
+GO
+
 -- Create a procedure to load data from CSV files into bronze tables
 CREATE OR ALTER PROCEDURE bronze.load_bronze AS
 BEGIN
     BEGIN TRY -- TRY-CATCH block to handle errors during data loading
+        print '--------------------------------'
         PRINT 'Loading data into bronze layer'
+        print '--------------------------------'
 
+        print '--------------------------------'
         PRINT 'Loading CRM tables:'
+        print '--------------------------------'
 
         -- Load data into bronze.crm_cust_info and truncate the table before loading new data
         PRINT 'Truncating bronze.crm_cust_info'
@@ -42,7 +49,9 @@ BEGIN
             TABLOCK
         )
 
+        print '--------------------------------'
         PRINT 'Loading ERP tables'
+        print '--------------------------------'
 
         -- Load data into bronze.erp_cust_az12 and truncate the table before loading new data
         PRINT 'Truncating bronze.erp_cust_az12'
@@ -86,3 +95,4 @@ BEGIN
     END CATCH
 END
 GO
+
