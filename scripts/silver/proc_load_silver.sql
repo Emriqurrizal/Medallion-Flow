@@ -87,7 +87,7 @@ begin
           end as sls_sales, --fix business rule (refer to explore_bronze.sql for the business rule)
           sls_quantity,
           case when sls_price is null or sls_price <= 0 
-               then sls_sales / sls_quantity
+               then sls_sales / nullif(sls_quantity, 0)
           else sls_price 
           end as sls_price --fix business rule (refer to explore_bronze.sql for the business rule)
           from bronze.crm_sales_details;
