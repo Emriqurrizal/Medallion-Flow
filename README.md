@@ -6,7 +6,7 @@
 
 ## Data Architecture
 
-![Alt text](docs\Data_Architecture.png)
+![Data Architecture](docs/Data_Architecture.png)
 
 The pipeline follows a **Bronze → Silver → Gold** layered approach, progressively refining raw data into business-ready analytical models.
 
@@ -161,8 +161,6 @@ After the Gold layer is built, the Star Schema enables:
 | **T-SQL Stored Procedures** | ETL automation (Bronze & Silver loads) |
 | **SQL Views** | Gold layer semantic layer |
 | **CSV Files** | Source system exports (CRM & ERP) |
-| **SSMS / Azure Data Studio** | Development & query interface |
-
 ---
 
 ## Key Design Decisions
